@@ -20,6 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+
 SECRET_KEY = 'django-insecure--4iws!uc#2j2cwb2llj!)k&lw3=+zy^2cxqrdj2h=nai8eiq*8'
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -213,6 +214,34 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
 # AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
 # AWS_STORAGE_BUCKET_NAME = 'devsearch-bucket'
+
+# -------------------------------------------------------------------------------------------------------------------------------------
+# solve the (security.W008):
+'''?: (security.W008) Your SECURE_SSL_REDIRECT setting is not set to True. Unless your site should be available over both SSL and non-SSL connections, you may want to either set this setting True or configure a load balancer or reverse-proxy server to redirect all connections to HTTPS.
+'''
+# 4) SSL redirect
+'''SECURE_SSL_REDIRECT = True
+'''
+# -------------------------------------------------------------------------------------------------------------------------------------
+# solve the (security.W004):
+'''?: (security.W004) You have not set a value for the SECURE_HSTS_SECONDS setting. If your entire site is served only over SSL, you may want to consider setting a value and enabling HTTP Strict Transport Security. Be sure to read the documentation first; enabling HSTS carelessly can cause serious, irreversible problems.
+'''
+# 6) HTTP Strict Transport Security (HSTS)
+SECURE_HSTS_SECONDS = 86400
+SECURE_HSTS_PRELOAD = True
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+# -------------------------------------------------------------------------------------------------------------------------------------
+# solve the (security.W012):
+'''?: (security.W012) SESSION_COOKIE_SECURE is not set to True. Using a secure-only session cookie makes it more difficult for network traffic sniffers to hijack user sessions.'''
+#7) Cross-site request forgery (CSRF) protection
+'''SESSION_COOKIE_SECURE = True
+'''
+# solve the (security.W016):
+'''?: (security.W016) You have 'django.middleware.csrf.CsrfViewMiddleware' in your MIDDLEWARE, but you have not set CSRF_COOKIE_SECURE to True. Using a secure-only CSRF cookie makes it more difficult for network traffic sniffers to steal the CSRF token.'''
+# 7) Cross-site request forgery (CSRF) protection
+CSRF_COOKIE_SECURE = True
+
+# -------------------------------------------------------------------------------------------------------------------------------------
 
 
 if os.getcwd() == '/app':
