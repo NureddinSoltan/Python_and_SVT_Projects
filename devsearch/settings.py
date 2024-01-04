@@ -26,8 +26,22 @@ SECRET_KEY = 'django-insecure--4iws!uc#2j2cwb2llj!)k&lw3=+zy^2cxqrdj2h=nai8eiq*8
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+#ALLOWED_HOSTS = ['localhost', '127.0.0.1',]
+ALLOWED_HOSTS = ['f962-176-42-136-150.ngrok-free.app',
+'f962-176-42-136-150.ngrok-free.app',
+'0490-176-42-136-150.ngrok-free.app',
+'d738-176-42-136-150.ngrok-free.app',
+'1dd8-176-42-136-150.ngrok-free.app',
+'d66e-176-42-136-150.ngrok-free.app',
+'localhost', '127.0.0.1'
+]
 
+CSRF_TRUSTED_ORIGINS=['https://f962-176-42-136-150.ngrok-free.app',
+                      'https://0490-176-42-136-150.ngrok-free.app',
+                      'https://d738-176-42-136-150.ngrok-free.app',
+                      'https://1dd8-176-42-136-150.ngrok-free.app',
+                      'https://d66e-176-42-136-150.ngrok-free.app',
+                      'http://127.0.0.1:8000/']
 
 # Application definition
 
@@ -183,8 +197,8 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'YOUR-EMAIL'
-EMAIL_HOST_PASSWORD = 'YOUR-EMAIL-PASSWORD'
+EMAIL_HOST_USER = 'cfms1968@gmail.com'
+EMAIL_HOST_PASSWORD = 'iiqd zjgp xvod anat'
 
 
 # Static files (CSS, JavaScript, Images)
@@ -230,6 +244,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 SECURE_HSTS_SECONDS = 86400
 SECURE_HSTS_PRELOAD = True
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+
+#SESSION_COOKIE_AGE = 10
+
 # -------------------------------------------------------------------------------------------------------------------------------------
 # solve the (security.W012):
 '''?: (security.W012) SESSION_COOKIE_SECURE is not set to True. Using a secure-only session cookie makes it more difficult for network traffic sniffers to hijack user sessions.'''
