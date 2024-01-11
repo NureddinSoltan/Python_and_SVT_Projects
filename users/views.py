@@ -69,7 +69,7 @@ def registerUser(request):
 
 
 def profiles(request):
-    profiles, search_query = searchProfiles(request)
+    profiles, search_query = searchProfiles(request) #move it to the ubn=
 
     custom_range, profiles = paginateProfiles(request, profiles, 3)
     context = {'profiles': profiles, 'search_query': search_query,
@@ -88,7 +88,7 @@ def userProfile(request, pk):
     return render(request, 'users/user-profile.html', context)
 
 
-@login_required(login_url='login')
+@login_required(login_url='login') #login is required
 def userAccount(request):
     profile = request.user.profile
 

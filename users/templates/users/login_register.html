@@ -20,7 +20,7 @@
 
             {% for field in form %}
             <div class="form__field">
-                <label for="formInput#text">{{field.label}}</label>
+                <label for="formInput#text">{{field.label}} </label>
                 {{field}}
 
                 <!-- {% if field.help_text %}
@@ -67,14 +67,14 @@
             <!-- Input:Username -->
             <div class="form__field">
                 <label for="formInput#text">Username: </label>
-                <input class="input input--text" id="formInput#text" type="text" name="username"
+                <input class="input input--text" required id="formInput#text" type="text" name="username"
                     placeholder="Enter your username..." />
             </div>
 
             <!-- Input:Password -->
             <div class="form__field">
                 <label for="formInput#password">Password: </label>
-                <input class="input input--password" id="formInput#passowrd" type="password" name="password"
+                <input class="input input--password" required id="formInput#passowrd" type="password" name="password"
                     placeholder="••••••••" />
             </div>
 
